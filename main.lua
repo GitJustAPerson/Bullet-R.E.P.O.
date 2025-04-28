@@ -1,3 +1,18 @@
+local tilemap = require('tilemap')
+local file = nil
+local tiles = nil
+
+function love.load()
+    file = io.open('level.txt')
+    tiles = tilemap.generateTiles(file)
+    io.close(file)
+    
+    for i, v in ipairs(tiles) do
+        print(v)
+    end
+
+end
+
 function love.draw()
-    love.graphics.print('Hello Github', 250, 250, 0, 1, 1)
+    tilemap.drawTiles(tiles)
 end
