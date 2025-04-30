@@ -5,13 +5,12 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 @onready var sprite: AnimatedSprite2D = $"Sprite"
-@onready var button: Button = $"../StartMenu/Button"
 
 var has_game_started = false
 
 func _ready() -> void:
 	sprite.visible = false
-	await button.pressed
+	await $"../StartMenu".game_start
 	has_game_started = true
 	sprite.visible = true
 
