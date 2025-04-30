@@ -1,9 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2du3qhkv81wc"]
+[gd_scene load_steps=7 format=3 uid="uid://d2du3qhkv81wc"]
 
 [ext_resource type="PackedScene" uid="uid://cvpvh3br0qf74" path="res://assets/scenes/player.tscn" id="1_cb66b"]
 [ext_resource type="Script" uid="uid://cox8ouutlnhts" path="res://assets/scripts/player.gd" id="2_dis88"]
+[ext_resource type="FontFile" uid="uid://33vpbjxilnsd" path="res://assets/fonts/comic.ttf" id="3_5gf0t"]
+[ext_resource type="Script" uid="uid://hyxpduoi2bse" path="res://assets/scripts/start_menu.gd" id="3_cb5na"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cb66b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cb5na"]
+font = ExtResource("3_5gf0t")
+font_size = 100
 
 [node name="Game" type="Node2D"]
 
@@ -19,3 +25,27 @@ shape = SubResource("WorldBoundaryShape2D_cb66b")
 position = Vector2(-2, -202)
 scale = Vector2(2, 2)
 script = ExtResource("2_dis88")
+
+[node name="StartMenu" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_cb5na")
+
+[node name="Title" type="Label" parent="StartMenu"]
+offset_left = -416.0
+offset_top = -322.0
+offset_right = 446.0
+offset_bottom = -181.0
+text = "Cool Game I Guess"
+label_settings = SubResource("LabelSettings_cb5na")
+
+[node name="Button" type="Button" parent="StartMenu"]
+offset_left = -129.0
+offset_top = -72.0
+offset_right = 62.0
+offset_bottom = 77.0
+scale = Vector2(1.4, 0.96)
+theme_override_fonts/font = ExtResource("3_5gf0t")
+theme_override_font_sizes/font_size = 100
+text = "Play"
+
+[connection signal="pressed" from="StartMenu/Button" to="StartMenu" method="_on_button_pressed"]

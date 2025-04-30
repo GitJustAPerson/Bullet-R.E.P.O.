@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Cool Game I Guess"
+config/name="Carson's Game"
 run/main_scene="uid://d2du3qhkv81wc"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
