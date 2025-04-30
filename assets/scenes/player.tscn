@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvpvh3br0qf74"]
 
-[ext_resource type="Texture2D" uid="uid://ces0y06a40anw" path="res://assets/sprites/Test Guy.png" id="2_14505"]
+[ext_resource type="Texture2D" uid="uid://dy8jo3ahuqflx" path="res://assets/sprites/The New Test Guy.png" id="1_rwm0n"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4wcc8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rwm0n"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_14505")
+"texture": ExtResource("1_rwm0n")
 }],
 "loop": true,
 "name": &"default",
@@ -15,11 +15,13 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_4wcc8")
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(2, 21)
 scale = Vector2(0.55, 0.5)
 build_mode = 1
-polygon = PackedVector2Array(-9.09091, 8, 10.9091, 8, 10.9091, -2, 3.63636, -2, 3.63636, -10, 18.1818, -16, 18.1818, -26, 5.45455, -64, 1.81818, -70, 5.45455, -74, 7.27273, -78, 0, -90, -9.09091, -86, -12.7273, -80, -7.27273, -70, -10.9091, -66, -12.7273, -56, -14.5455, -50, -16.8077, -41.322, -19.1273, -33.3028, -21.8182, -24, -21.8182, -16, -9.09091, -10)
+polygon = PackedVector2Array(-1.81818, 8, 5.45455, 8, 5.45455, -12, 9.09091, -12, 9.09091, 8, 20, 8, 20, 4, 16.3636, 4, 16.3636, -20, 23.6364, -20, 23.6364, -32, 21.8182, -32, 21.8182, -36, 18.1818, -44, 16.3636, -52, 20, -60, 20, -76, 12.7273, -84, -1.81818, -84, -9.09091, -80, -12.7273, -74, -12.7273, -60, -9.09091, -56, -5.45455, -52, -1.81818, -52, -3.63636, -48, -10.9091, -34, -10.9091, -24, -9.09091, -24, -9.09091, -20, -5.45455, -20, -5.45455, -8, -1.81818, -8)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(7, 0)
+sprite_frames = SubResource("SpriteFrames_rwm0n")
+offset = Vector2(-7, 0)
