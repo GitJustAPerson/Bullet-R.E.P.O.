@@ -48,6 +48,9 @@ theme_override_fonts/font = ExtResource("3_5gf0t")
 theme_override_font_sizes/font_size = 100
 text = "Play"
 
+[node name="FlashTimer" type="Timer" parent="StartMenu"]
+wait_time = 0.1
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="pressed" from="StartMenu/Button" to="StartMenu" method="_on_button_pressed"]
