@@ -4,20 +4,14 @@
 [ext_resource type="Script" uid="uid://cox8ouutlnhts" path="res://assets/scripts/player.gd" id="2_dis88"]
 [ext_resource type="FontFile" uid="uid://33vpbjxilnsd" path="res://assets/fonts/comic.ttf" id="3_5gf0t"]
 [ext_resource type="Script" uid="uid://hyxpduoi2bse" path="res://assets/scripts/start_menu.gd" id="3_cb5na"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cb66b"]
+[ext_resource type="PackedScene" uid="uid://epgc7qyaiknx" path="res://assets/scenes/levels/test_level.tscn" id="5_j62u1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cb5na"]
 font = ExtResource("3_5gf0t")
 font_size = 100
 
 [node name="Game" type="Node2D"]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, 91)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_cb66b")
+metadata/_edit_horizontal_guides_ = [568.0]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -52,5 +46,8 @@ text = "Play"
 wait_time = 0.1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="TestLevel" parent="." instance=ExtResource("5_j62u1")]
+position = Vector2(-18, -87)
 
 [connection signal="pressed" from="StartMenu/Button" to="StartMenu" method="_on_button_pressed"]

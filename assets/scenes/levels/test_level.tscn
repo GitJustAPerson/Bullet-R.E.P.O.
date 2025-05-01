@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=4 uid="uid://epgc7qyaiknx"]
+
+[ext_resource type="Texture2D" uid="uid://bvtvic6bjyjtd" path="res://assets/sprites/Texture Sheet.png" id="1_u1p23"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u1p23"]
+texture = ExtResource("1_u1p23")
+separation = Vector2i(10, 10)
+texture_region_size = Vector2i(50, 50)
+0:0/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25.5, -25, 25, 25, 25.5, 25, -25)
+
+[sub_resource type="TileSet" id="TileSet_a2kxc"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_u1p23")
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD8/wMAAAAAAAIAAAD//wMAAAAAAAIAAAACAAMAAAAAAAIAAAAFAAMAAAAAAAIAAAAIAAAAAAAAAAIAAAD5/wAAAAAAAAIAAAD8//j/AAAAAAIAAAAEAPj/AAAAAAIAAAA=")
+tile_set = SubResource("TileSet_a2kxc")
