@@ -7,8 +7,9 @@ texture = ExtResource("1_u1p23")
 separation = Vector2i(10, 10)
 texture_region_size = Vector2i(50, 50)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25.5, -25, 25, 25, 25.5, 25, -25)
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
 
 [sub_resource type="TileSet" id="TileSet_a2kxc"]
 physics_layer_0/collision_layer = 1
