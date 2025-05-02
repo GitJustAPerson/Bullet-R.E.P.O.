@@ -14,11 +14,7 @@ font_size = 100
 metadata/_edit_horizontal_guides_ = [568.0]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Player" parent="." instance=ExtResource("1_cb66b")]
-position = Vector2(-2, -202)
-scale = Vector2(2, 2)
-script = ExtResource("2_dis88")
+enabled = false
 
 [node name="StartMenu" type="Node" parent="."]
 unique_name_in_owner = true
@@ -49,5 +45,10 @@ wait_time = 0.1
 
 [node name="TestLevel" parent="." instance=ExtResource("5_j62u1")]
 position = Vector2(-18, -87)
+
+[node name="Player" parent="." instance=ExtResource("1_cb66b")]
+position = Vector2(-2, -202)
+scale = Vector2(2, 2)
+script = ExtResource("2_dis88")
 
 [connection signal="pressed" from="StartMenu/Button" to="StartMenu" method="_on_button_pressed"]
