@@ -14,7 +14,7 @@ const PLAY_BUTTON_PRESSED = preload("res://assets/sounds/play_button_pressed.wav
 func _on_button_pressed() -> void:
 	button.disabled = true;
 	
-	var level: Node2D = level_manager.load_level(level_manager.level_type.TEST_LEVEL);
+	var level: Node2D = level_manager.load_level("res://assets/scenes/levels/test_level.tscn");
 	level.position = Vector2(0.0, 0.0);
 	
 	audio_stream_player_2d.stream = PLAY_BUTTON_PRESSED;

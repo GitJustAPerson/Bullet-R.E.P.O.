@@ -1,17 +1,16 @@
+class_name LevelManager
+
 extends Node;
 
-enum level_type {TEST_LEVEL}
+enum level_type {TEST_LEVEL, OTHER_TEST_LEVEL};
 
-func load_level(level_name: level_type):
+func load_level(level_name: String):
 	var LEVEL_FILE = null;
 	var LOADED_LEVEL = null;
 	
-	match level_name:
-		level_type.TEST_LEVEL:
-			print('test level')
-			LEVEL_FILE = preload("res://assets/scenes/levels/test_level.tscn");
-			LOADED_LEVEL = LEVEL_FILE.instantiate();
-			return LOADED_LEVEL
-		_:
-			print('Not a valid level');
+
+	#print('test level')
+	LEVEL_FILE = load(level_name);
+	LOADED_LEVEL = LEVEL_FILE.instantiate();
+	return LOADED_LEVEL
 	

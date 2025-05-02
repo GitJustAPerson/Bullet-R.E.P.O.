@@ -52,5 +52,6 @@ script = ExtResource("2_dis88")
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("5_j62u1")
+metadata/_custom_type_script = "uid://d22vwa436vi7x"
 
 [connection signal="pressed" from="StartMenu/Button" to="StartMenu" method="_on_button_pressed"]
