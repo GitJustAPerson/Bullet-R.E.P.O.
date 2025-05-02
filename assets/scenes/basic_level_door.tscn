@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://jj145i5i5veh"]
+
+[ext_resource type="Script" uid="uid://dja6tdqaj0cjt" path="res://assets/scripts/level_door.gd" id="1_3jq4f"]
+[ext_resource type="Texture2D" uid="uid://b5gr75wg2qjdc" path="res://icon.svg" id="2_k7jaa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8ygl"]
+size = Vector2(127, 125)
+
+[node name="LevelDoor" type="Area2D"]
+script = ExtResource("1_3jq4f")
+metadata/_custom_type_script = "uid://dja6tdqaj0cjt"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.32, 0.487)
+texture = ExtResource("2_k7jaa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+scale = Vector2(0.32, 0.487)
+shape = SubResource("RectangleShape2D_j8ygl")

@@ -16,6 +16,7 @@ func _on_button_pressed() -> void:
 	
 	var level: Node2D = level_manager.load_level("res://assets/scenes/levels/test_level.tscn");
 	level.position = Vector2(0.0, 0.0);
+	level.visible = false;
 	
 	audio_stream_player_2d.stream = PLAY_BUTTON_PRESSED;
 	audio_stream_player_2d.play();
@@ -33,6 +34,7 @@ func _on_button_pressed() -> void:
 	title.queue_free();
 	button.queue_free();
 	
-	add_child(level);
+	#add_child(level);
+	level.visible = true;
 	
 	game_start.emit();

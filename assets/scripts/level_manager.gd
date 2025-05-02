@@ -12,5 +12,6 @@ func load_level(level_name: String):
 	#print('test level')
 	LEVEL_FILE = load(level_name);
 	LOADED_LEVEL = LEVEL_FILE.instantiate();
-	return LOADED_LEVEL
+	get_parent().add_child(LOADED_LEVEL);
+	return LOADED_LEVEL;
 	

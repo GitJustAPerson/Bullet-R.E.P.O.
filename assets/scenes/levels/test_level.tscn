@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=4 uid="uid://epgc7qyaiknx"]
+[gd_scene load_steps=9 format=4 uid="uid://epgc7qyaiknx"]
 
 [ext_resource type="Texture2D" uid="uid://bvtvic6bjyjtd" path="res://assets/sprites/Texture Sheet.png" id="1_u1p23"]
-[ext_resource type="Script" uid="uid://dja6tdqaj0cjt" path="res://assets/scripts/level_door.gd" id="2_a2kxc"]
-[ext_resource type="Texture2D" uid="uid://b5gr75wg2qjdc" path="res://icon.svg" id="3_nd8wk"]
+[ext_resource type="PackedScene" uid="uid://jj145i5i5veh" path="res://assets/scenes/basic_level_door.tscn" id="2_a2kxc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nd8wk"]
 texture = ExtResource("1_u1p23")
@@ -73,9 +72,6 @@ _data = {
 &"moving_platform_test": SubResource("Animation_a2kxc")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nd8wk"]
-size = Vector2(43, 65)
-
 [node name="TestLevel" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [90.0]
 
@@ -117,18 +113,7 @@ libraries = {
 }
 autoplay = "moving_platform_test"
 
-[node name="LevelDoor" type="Area2D" parent="."]
-position = Vector2(364, -262)
-script = ExtResource("2_a2kxc")
+[node name="LevelDoor" parent="." instance=ExtResource("2_a2kxc")]
+position = Vector2(376, -281)
 DestinationLevel = "other_test_level"
-StartingPositionNode = "StartingPos"
-metadata/_custom_type_script = "uid://dja6tdqaj0cjt"
-
-[node name="Sprite2D" type="Sprite2D" parent="LevelDoor"]
-position = Vector2(12, -24)
-scale = Vector2(-0.335944, 0.556385)
-texture = ExtResource("3_nd8wk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelDoor"]
-position = Vector2(11.5, -24.5)
-shape = SubResource("RectangleShape2D_nd8wk")
+StartingPositionNode = "LevelDoor"
