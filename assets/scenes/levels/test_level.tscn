@@ -121,6 +121,7 @@ autoplay = "moving_platform_test"
 position = Vector2(364, -262)
 script = ExtResource("2_a2kxc")
 DestinationLevel = "other_test_level"
+StartingPositionNode = "StartingPos"
 metadata/_custom_type_script = "uid://dja6tdqaj0cjt"
 
 [node name="Sprite2D" type="Sprite2D" parent="LevelDoor"]
