@@ -29,3 +29,4 @@ shape = SubResource("RectangleShape2D_rwm0n")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+position_smoothing_speed = 2.0

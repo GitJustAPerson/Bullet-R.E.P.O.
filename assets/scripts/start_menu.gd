@@ -9,9 +9,13 @@ extends Node;
 signal game_start;
 
 const PLAY_BUTTON_PRESSED = preload("res://assets/sounds/play_button_pressed.wav");
+@onready var level_manager: Node = $"../LevelManager"
 
 func _on_button_pressed() -> void:
 	button.disabled = true;
+	
+	var level: Node2D = level_manager.load_level(level_manager.level_type.TEST_LEVEL);
+	level.position = Vector2(0.0, 0.0);
 	
 	audio_stream_player_2d.stream = PLAY_BUTTON_PRESSED;
 	audio_stream_player_2d.play();
@@ -28,5 +32,7 @@ func _on_button_pressed() -> void:
 	
 	title.queue_free();
 	button.queue_free();
+	
+	add_child(level);
 	
 	game_start.emit();
