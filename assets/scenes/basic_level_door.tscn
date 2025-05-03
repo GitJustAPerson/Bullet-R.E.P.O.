@@ -1,20 +1,32 @@
 [gd_scene load_steps=4 format=3 uid="uid://jj145i5i5veh"]
 
-[ext_resource type="Script" uid="uid://dja6tdqaj0cjt" path="res://assets/scripts/level_door.gd" id="1_3jq4f"]
-[ext_resource type="Texture2D" uid="uid://b5gr75wg2qjdc" path="res://icon.svg" id="2_k7jaa"]
+[ext_resource type="Script" uid="uid://yigffyysjahx" path="res://assets/scenes/basic_level_door.gd" id="1_rhfvt"]
+[ext_resource type="Texture2D" uid="uid://bvtvic6bjyjtd" path="res://assets/sprites/Texture Sheet.png" id="2_rhfvt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j8ygl"]
-size = Vector2(127, 125)
+size = Vector2(76.0759, 99.1638)
 
 [node name="LevelDoor" type="Area2D"]
-script = ExtResource("1_3jq4f")
+script = ExtResource("1_rhfvt")
 metadata/_custom_type_script = "uid://dja6tdqaj0cjt"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.32, 0.487)
-texture = ExtResource("2_k7jaa")
+[node name="TopSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.487, 0.487)
+texture = ExtResource("2_rhfvt")
+region_enabled = true
+region_rect = Rect2(0, 240, 50.3092, 50.4883)
+
+[node name="BottomSprite" type="Sprite2D" parent="."]
+position = Vector2(0, 24)
+scale = Vector2(0.487, 0.487)
+texture = ExtResource("2_rhfvt")
+region_enabled = true
+region_rect = Rect2(0, 299.606, 50.3092, 50.8918)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -0.5)
+position = Vector2(-0.0462317, 11.8536)
 scale = Vector2(0.32, 0.487)
 shape = SubResource("RectangleShape2D_j8ygl")
+
+[node name="CutsceneDelay" type="Timer" parent="."]
+wait_time = 0.5

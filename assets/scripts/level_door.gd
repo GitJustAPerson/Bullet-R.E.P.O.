@@ -5,9 +5,18 @@ extends Area2D
 
 @onready var level_manager: LevelManager = get_parent().get_parent().get_node("LevelManager")
 @onready var fade_effect: Line2D = get_parent().get_parent().get_node("TransitionEffect")
+@onready var cutscene_delay: Timer = $CutsceneDelay
+
 
 @export var DestinationLevel: String;
 @export var StartingPositionNode: String;
+
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = level_manager.get_parent().get_node('AudioStreamPlayer2D')
+
+signal entered;
+
+const door_sound_filename = 'res://assets/sounds/door_open_good.wav'
+const DOOR_OPEN_SOUND = preload(door_sound_filename);
 
 var has_entered = false;
 
@@ -26,6 +35,17 @@ func _input(event: InputEvent) -> void:
 						
 						body.velocity = Vector2(0.0, 0.0)
 						body.motion_mode = body.MOTION_MODE_FLOATING;
+						
+						audio_stream_player_2d.stream = DOOR_OPEN_SOUND
+						audio_stream_player_2d.play()
+						
+						entered.emit()
+						
+						# wait for cutscene
+						
+						cutscene_delay.start()
+						
+						await cutscene_delay.timeout;
 						
 						fade_effect.fade_in();
 						
