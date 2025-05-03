@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2du3qhkv81wc"]
+[gd_scene load_steps=8 format=3 uid="uid://d2du3qhkv81wc"]
 
 [ext_resource type="PackedScene" uid="uid://cvpvh3br0qf74" path="res://assets/scenes/player.tscn" id="1_cb66b"]
 [ext_resource type="Script" uid="uid://cox8ouutlnhts" path="res://assets/scripts/player.gd" id="2_dis88"]
 [ext_resource type="FontFile" uid="uid://33vpbjxilnsd" path="res://assets/fonts/comic.ttf" id="3_5gf0t"]
 [ext_resource type="Script" uid="uid://hyxpduoi2bse" path="res://assets/scripts/start_menu.gd" id="3_cb5na"]
 [ext_resource type="Script" uid="uid://d22vwa436vi7x" path="res://assets/scripts/level_manager.gd" id="5_j62u1"]
+[ext_resource type="Script" uid="uid://c1qqui0537v2o" path="res://assets/scenes/transition_effect.gd" id="6_5aext"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cb5na"]
 font = ExtResource("3_5gf0t")
@@ -14,6 +15,7 @@ font_size = 100
 metadata/_edit_horizontal_guides_ = [568.0]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 scale = Vector2(6, 6)
 enabled = false
 
@@ -53,5 +55,18 @@ script = ExtResource("2_dis88")
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("5_j62u1")
 metadata/_custom_type_script = "uid://d22vwa436vi7x"
+
+[node name="TransitionEffect" type="Line2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+position = Vector2(78.1732, -162)
+scale = Vector2(-97.16, 1.83633)
+points = PackedVector2Array(-0.983278, 866.402, 0.114335, -749.865)
+width = 27.0
+default_color = Color(0, 0, 0, 1)
+script = ExtResource("6_5aext")
+
+[node name="FadeTimer" type="Timer" parent="TransitionEffect"]
+wait_time = 0.01
 
 [connection signal="pressed" from="StartMenu/Button" to="StartMenu" method="_on_button_pressed"]
