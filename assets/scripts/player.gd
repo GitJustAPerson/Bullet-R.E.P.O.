@@ -5,6 +5,8 @@ const CAN_CHEAT = false
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+var can_move = true
+
 @onready var sprite: AnimatedSprite2D = $"Sprite"
 
 var has_game_started = false
@@ -20,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	
 	$"../TransitionEffect".position = position
 	
-	if has_game_started:
+	if has_game_started and can_move:
 		# Add the gravity.
 		
 		if not CAN_CHEAT:

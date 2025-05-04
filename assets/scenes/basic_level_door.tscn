@@ -29,4 +29,3 @@ scale = Vector2(0.32, 0.487)
 shape = SubResource("RectangleShape2D_j8ygl")
 
 [node name="CutsceneDelay" type="Timer" parent="."]
-wait_time = 0.5

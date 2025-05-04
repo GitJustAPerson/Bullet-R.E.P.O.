@@ -34,7 +34,8 @@ func _input(event: InputEvent) -> void:
 						var body: CharacterBody2D = node;
 						
 						body.velocity = Vector2(0.0, 0.0)
-						body.motion_mode = body.MOTION_MODE_FLOATING;
+						
+						body.can_move = false;
 						
 						audio_stream_player_2d.stream = DOOR_OPEN_SOUND
 						audio_stream_player_2d.play()
@@ -58,10 +59,11 @@ func _input(event: InputEvent) -> void:
 						var starting_node: Node2D = new_level.get_node(StartingPositionNode)
 						
 						body.position = starting_node.position;
-						body.motion_mode = body.MOTION_MODE_GROUNDED;
 						
 						fade_effect.fade_out();
 						await fade_effect.fade_out_end;
+						
+						body.can_move = true;
 						
 						get_parent().queue_free()
 						
