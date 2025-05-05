@@ -60,6 +60,8 @@ func _input(event: InputEvent) -> void:
 						
 						body.position = starting_node.position;
 						
+						get_parent().visible = false;
+						
 						fade_effect.fade_out();
 						await fade_effect.fade_out_end;
 						
