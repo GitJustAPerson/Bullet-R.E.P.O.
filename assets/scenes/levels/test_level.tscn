@@ -114,6 +114,7 @@ libraries = {
 autoplay = "moving_platform_test"
 
 [node name="LevelDoor" parent="." instance=ExtResource("2_a2kxc")]
-position = Vector2(376, -281)
+position = Vector2(377, -322)
+scale = Vector2(2, 2)
 DestinationLevel = "other_test_level"
 StartingPositionNode = "LevelDoor"
