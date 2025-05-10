@@ -14,16 +14,17 @@ metadata/_custom_type_script = "uid://dja6tdqaj0cjt"
 scale = Vector2(0.487, 0.487)
 texture = ExtResource("2_rhfvt")
 region_enabled = true
-region_rect = Rect2(0, 240, 50.3092, 50.4883)
+region_rect = Rect2(0, 240, 50, 50)
 
 [node name="BottomSprite" type="Sprite2D" parent="."]
 position = Vector2(0, 24)
 scale = Vector2(0.487, 0.487)
 texture = ExtResource("2_rhfvt")
 region_enabled = true
-region_rect = Rect2(0, 299.606, 50.3092, 50.8918)
+region_rect = Rect2(0, 300, 50, 50)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-0.0462317, 11.8536)
 scale = Vector2(0.32, 0.487)
 shape = SubResource("RectangleShape2D_j8ygl")
